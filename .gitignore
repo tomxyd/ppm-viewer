@@ -1,0 +1,14 @@
+.vs/
+build/
+out/
+
+//CMake Build Junk
+*~
+*.swp
+Thumbs.db
+
+//Visual Studio Build Artifacts
+*.obj
+*.pdb
+*.vcxproj*
+*.sln
