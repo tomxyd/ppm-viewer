@@ -1,3 +1,7 @@
+//Author: Tolulope Mojid
+//Date: 04-07-2-25
+
+
 #include <iostream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -123,16 +127,6 @@ int main()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-	//try
-	//{
-	//	Load("sample.ppm");
-	//}
-	//catch (const std::exception& e) {
-	//	std::cerr << e.what() << "\n";
-	//}
-
-	//glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, ppmImage.h._width, ppmImage.h._height, 0, GL_BGRA, GL_UNSIGNED_BYTE, ppmImage.GetPixelBuffer().data());
-	//glGenerateMipmap(GL_TEXTURE_2D);
 
 	
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -170,12 +164,11 @@ int main()
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 
-		// 2. Show a simple window that we create ourselves. We use a Begin/End pair to create a named window.
 		{
 			static float f = 0.0f;
 			static int counter = 0;
 
-			ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
+			ImGui::Begin("PPM Debug Window");                         
 
 			if (ImGui::Button("Load PPM Image"))
 			{
@@ -211,9 +204,6 @@ int main()
 		ImGui::Render();
 
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-
-		// glBindVertexArray(0); // no need to unbind it every time 
 
 		// glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 		// -------------------------------------------------------------------------------
